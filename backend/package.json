@@ -1,14 +1,13 @@
 {
-  "name": "job-backend",
+  "name": "jobupdates-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "module",
   "dependencies": {
-    "express": "^4.18.2",
-    "body-parser": "^1.20.2",
+    "axios": "^1.6.0",
     "cors": "^2.8.5",
-    "googleapis": "^131.0.0"
-  },
-  "scripts": {
-    "start": "node index.js"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
   }
 }
+
