@@ -33,7 +33,7 @@
   - In OAuth playground, select Blogger API scope: `https://www.googleapis.com/auth/blogger`
   - Authorize & exchange authorization code for tokens — copy the `refresh_token`.
 - Set the following environment variables on your backend host:
-  - `BLOG_ID` = 7791873568125614615
+  - `BLOG_ID` = ...........................
   - `CLIENT_ID` = your-client-id
   - `CLIENT_SECRET` = your-client-secret
   - `REFRESH_TOKEN` = your-refresh-token
@@ -42,8 +42,8 @@ The backend will exchange the refresh token for access tokens automatically.
 
 ### 2) Firebase (for admin login)
 - In Firebase Console -> Authentication -> Add User -> use the admin email and password:
-  - Email: `kalluriashok2627@gmail.com`
-  - Password: `AshokUma@1327`
+  - Email: `........................`
+  - Password: `...................'
 - Make sure Firebase Hosting or your static host serves the `frontend/` folder.
 
 ### 3) Run backend locally (for testing)
@@ -68,7 +68,7 @@ node index.js
 - You can enhance backend to write to Firestore if you add service account credentials.
 
 ## Blog ID used in project:
-7791873568125614615
+.................................
 
 ## Final tips
 - Test locally end-to-end: run backend, open `frontend/login.html`, login, open `admin.html` and post.
