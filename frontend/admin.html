@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin - Post Job</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <h2>Admin Panel - Post New Job</h2>
+    <label>Title</label><br>
+    <input id="title" /><br>
+    <label>Short Description (2-3 lines)</label><br>
+    <textarea id="short" rows="3"></textarea><br>
+    <label>Full Description (HTML allowed)</label><br>
+    <textarea id="full" rows="8"></textarea><br>
+    <label>Category</label><br>
+    <input id="category" placeholder="Govt Jobs / Private / Internships" /><br>
+    <label>Tags (comma separated)</label><br>
+    <input id="tags" /><br><br>
+    <button id="postBtn">Post Job</button>
+    <p id="status"></p>
+    <p><strong>Note:</strong> You must run the backend server and configure environment variables as explained in the README.</p>
+  </div>
+
+<script>
+document.getElementById('postBtn').addEventListener('click', async () => {
+  const title = document.getElementById('title').value.trim();
+  const short = document.getElementById('short').value.trim();
+  const full = document.getElementById('full').value.trim();
+  const category = document.getElementById('category').value.trim();
+  const tags = document.getElementById('tags').value.trim();
+  if(!title || !short || !full) { alert('Please fill title, short and full description'); return; }
+  document.getElementById('status').textContent = 'Posting...';
+  try {
+    const res = await fetch('http://localhost:5000/postJob', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({title, short, full, category, tags})
+    });
+    const result = await res.json();
+    if(result.success) {
+      document.getElementById('status').textContent = 'Posted! Blogger URL: ' + result.blogUrl;
+    } else {
+      document.getElementById('status').textContent = 'Error: ' + result.message;
+    }
+  } catch (e) {
+    document.getElementById('status').textContent = 'Error connecting to backend: ' + e.message;
+  }
+});
+</script>
+<script>
+async function publishPost() {
+    const title = document.getElementById("jobTitle").value;
+    const content = document.getElementById("jobContent").value;
+
+    const response = await fetch("https://your-backend-url/create-post", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, content })
+    });
+
+    const result = await response.json();
+    alert(result.message || "Posted!");
+}
+</script>
+
+<input id="jobTitle" placeholder="Job Title" />
+<textarea id="jobContent" placeholder="Job Description"></textarea>
+<button onclick="publishPost()">Publish Job</button>
+
+</body>
+</html>

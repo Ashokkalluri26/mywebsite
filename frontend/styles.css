@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; margin:0; background:#f4f7fc; color:#112; }
+.nav{ display:flex; justify-content:space-between; padding:12px 20px; background:#003c8f; color:white; align-items:center;}
+.nav .menu a { color:white; margin-left:12px; text-decoration:none; font-weight:bold;}
+.header{ text-align:center; padding:30px 10px; background:linear-gradient(90deg,#0050b5,#003c8f); color:white;}
+.container{ width:90%; max-width:1000px; margin:20px auto; }
+.job-card{ background:white; padding:18px; margin-bottom:16px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+.job-short{ color:#333; }
+.btn{ display:inline-block; padding:10px 14px; background:#003c8f; color:white; text-decoration:none; border-radius:6px; }
+.admin-container{ width:90%; max-width:700px; margin:20px auto; background:white; padding:20px; border-radius:8px;}
+.login-box{ width:320px; margin:40px auto; background:white; padding:18px; border-radius:8px; text-align:center;}
+input, textarea{ width:100%; padding:8px; margin:6px 0; box-sizing:border-box;}
+.footer{ text-align:center; padding:16px; background:#003c8f; color:white; margin-top:30px;}
